@@ -21,7 +21,7 @@ export class TopCrimesComponent implements OnInit {
 
   public filterCrimes(crimes: Crime ) {
     // console.log(this.number_of_crimes);
-    return !(crimes.arrest_count != "1");
+    return (crimes.arrest_count != "1");
   }
 
 
