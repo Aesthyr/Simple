@@ -8,11 +8,13 @@ import { TopCrimesService } from '../top-crimes.service'
 })
 export class TopCrimesComponent implements OnInit {
 
+  public crimes;
+   
   constructor(private topCrimeService: TopCrimesService) { }
 
-  
-
   ngOnInit() {
+    this.topCrimeService.getCrimes().subscribe(data => this.crimes = data);
   }
+
 
 }

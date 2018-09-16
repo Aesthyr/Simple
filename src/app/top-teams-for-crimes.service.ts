@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Team } from './team'
+import { Observable } from 'rxjs'
 @Injectable({
   providedIn: 'root'
 })
 export class TopTeamsForCrimesService {
 
+  rootUrl = 'http://nflarrest.com/api/v1/crime/topTeams/Theft';
+
   constructor(private http: HttpClient) { }
 
-  configUrl = 'NflArrest.com/api/v1/crime/topTeams/1';
-
-
-  getConfig() {
-    return this.http.get(this.configUrl);
+  getTeams(): Observable<Team[]>{
+    return this.http.get<Team[]>(this.rootUrl);
   }
 }

@@ -1,3 +1,4 @@
-<p>
-  top-teams-for-crime works!
-</p>
+<div>Team ---- Team Name ---- Team City ----- Count</div>
+<div *ngFor='let team of teams'>
+    <div>{{team.Team}}---- {{team.Team_name}}----- {{team.Team_city}} ---- {{team.arrest_count  }}</div>
+</div>

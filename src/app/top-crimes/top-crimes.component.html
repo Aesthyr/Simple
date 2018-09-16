@@ -1,3 +1,5 @@
-<p>
-  top-crimes works!
-</p>
+
+<div>Crimes ---- counts</div>
+<div *ngFor='let crime of crimes'>
+    <div>{{crime.Category}} ---- {{crime.arrest_count  }} </div>
+</div>

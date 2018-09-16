@@ -1,16 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Player } from './player'
+import { Observable } from 'rxjs'
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TopPlayersForCrimesService {
 
+  rootUrl = 'http://nflarrest.com/api/v1/crime/topPlayers/Theft';
+
+
   constructor(private http: HttpClient) { }
 
-  configUrl = 'NflArrest.com/api/v1/crime/topPlayers/1';
-
-  getConfig() {
-    return this.http.get(this.configUrl);
+  getPlayers(): Observable<Player[]>{
+    return this.http.get<Player[]>(this.rootUrl);
   }
+  
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { TopPlayersForCrimesService } from '../top-players-for-crimes.service'
 @Component({
   selector: 'app-top-players-for-crime',
   templateUrl: './top-players-for-crime.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopPlayersForCrimeComponent implements OnInit {
 
-  constructor() { }
+  public players;
+
+  constructor(private topPlayersForCrimesService: TopPlayersForCrimesService) { }
 
   ngOnInit() {
+    this.topPlayersForCrimesService.getPlayers().subscribe(data => this.players = data);
   }
 
 }

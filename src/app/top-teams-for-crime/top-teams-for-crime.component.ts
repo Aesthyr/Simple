@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TopTeamsForCrimesService } from '../top-teams-for-crimes.service'
 
 @Component({
   selector: 'app-top-teams-for-crime',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopTeamsForCrimeComponent implements OnInit {
 
-  constructor() { }
+  public teams;
+
+  constructor(private topTeamsForCrimesService: TopTeamsForCrimesService) { }
 
   ngOnInit() {
+    this.topTeamsForCrimesService.getTeams().subscribe(data => this.teams = data);
   }
 
 }

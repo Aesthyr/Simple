@@ -1,3 +1,4 @@
-<p>
-  top-players-for-crime works!
-</p>
+<div>Player ---- counts</div>
+<div *ngFor='let player of players'>
+    <div>{{player.Name}} ---- {{player.arrest_count  }} </div>
+</div>
