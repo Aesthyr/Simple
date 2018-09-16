@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { TopCrimesComponent } from './top-crimes/top-crimes.component';
 import { TopPlayersForCrimeComponent } from './top-players-for-crime/top-players-for-crime.component';
 import { TopTeamsForCrimeComponent } from './top-teams-for-crime/top-teams-for-crime.component';
-
+import { CallbackPipe } from './callback.pipe'
 
 
 const appRoutes: Routes = [
@@ -26,7 +26,8 @@ const appRoutes: Routes = [
     AppComponent,
     TopCrimesComponent,
     TopPlayersForCrimeComponent,
-    TopTeamsForCrimeComponent
+    TopTeamsForCrimeComponent,
+    CallbackPipe
   ],
   imports: [
     BrowserModule,

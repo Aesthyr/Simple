@@ -1,5 +1,11 @@
 
 <div>Crimes ---- counts</div>
-<div *ngFor='let crime of crimes'>
-    <div>{{crime.Category}} ---- {{crime.arrest_count  }} </div>
+<div></div>
+<select (change)="onChange($event)" style="width:50px">
+        <option *ngFor="let crime of crimes" [value]="crime.arrest_count">{{crime.arrest_count}}</option>
+<select>
+<div></div>
+<div *ngFor='let crime of crimes | callback: filterCrimes'>
+        <div>{{crime.Category}} ---- {{crime.arrest_count }} </div>
 </div>
+

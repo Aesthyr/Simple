@@ -1,4 +1,4 @@
 <div>Player ---- counts</div>
-<div *ngFor='let player of players'>
+<div *ngFor='let player of players | callback: filterPlayers'>
     <div>{{player.Name}} ---- {{player.arrest_count  }} </div>
 </div>
